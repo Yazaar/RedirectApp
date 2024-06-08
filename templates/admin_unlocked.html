@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Admin</title>
+        <link rel="stylesheet" href="/static/css/admin_unlocked.css" />
+    </head>
+    <body>
+        <div class="fields">
+            <label for="pathField">Path</label>
+            <input id="pathField" class="textField" type="text" placeholder="path" />
+            <label for="targetField">Target</label>
+            <input id="targetField" class="textField" type="text" placeholder="target" />
+            <label for="typeField">Type</label>
+            <select id="typeField" class="selectField">
+                <option value="" selected hidden>Type</option>
+                <option value="redirect">Redirect</option>
+                <option value="download">Download</option>
+            </select>
+
+            <div class="fieldButtons">
+                <button id="fieldsSaveBTN">Save</button>
+                <button id="fieldsClearBTN">Clear</button>
+            </div>
+
+            <div class="fieldButtons">
+                <button id="fieldsDeleteBTN">Delete</button>
+            </div>
+        </div>
+
+        <div class="scrollerH">
+            <div id="registerTable" class="flexTable" style="min-width: 70ch; max-width: 70ch">
+                <div class="flexTableFilters">
+                    <input id="pathFilter" class="flexTableFilter" style="flex: 2 0" placeholder="Path filter" />
+                    <select id="typeFilter" class="flexTableFilter" style="flex: 1.25 0">
+                        <option value="" selected>Type filter</option>
+                        <option value="redirect">Redirect</option>
+                        <option value="download">Download</option>
+                    </select>
+                    <input id="targetFilter" class="flexTableFilter" style="flex: 2 0" placeholder="target filter" />
+                </div>
+                <div class="flexTableHeader">
+                    <div class="flexTableColumn" style="flex: 2 0">path</div>
+                    <div class="flexTableColumn" style="flex: 1.25 0">type</div>
+                    <div class="flexTableColumn" style="flex: 2 0">target</div>
+                </div>
+                <div class="flexTableRows heightLimit75 scrollerV">
+                    {% for i in redirects %}
+                    <div class="flexTableRow" data-id="{{i.id}}" data-path="{{i.path}}" data-type="{{i.type}}" data-target="{{i.target}}">
+                        <div class="flexTableColumn" style="flex: 2 0">{{i.path}}</div>
+                        <div class="flexTableColumn" style="flex: 1.25 0">{{i.type}}</div>
+                        <div class="flexTableColumn" style="flex: 2 0">{{i.target}}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <script src="/static/js/admin_unlocked.js"></script>
+    </body>
+</html>

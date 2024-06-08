@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.flexTableFilters {
+    display: flex;
+}
+
+.flexTableHeader {
+    display: flex;
+    background: #003e85;
+    color: #ffffff;
+}
+
+.flexTable {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.flexTableRow {
+    display: flex;
+    background: #446d9e;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.flexTableRow.hidden {
+    display: none;
+}
+
+.flexTableRow:nth-child(odd) {
+    background: #2d4b74;
+}
+
+.flexTableRow:hover {
+    background: #183153;
+}
+
+.flexTableColumn {
+    padding: 5px 10px;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.heightLimit75 {
+    max-height: 75vh;
+}
+
+.scrollerH {
+    overflow-x: auto;
+}
+
+.scrollerV {
+    overflow-y: auto;
+}
+
+.fields {
+    background: #b6c1ce;
+    display: flex;
+    flex-direction: column;
+    width: min(40ch, calc(100vw - 20px));
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+}
+
+.textField {
+    margin: 5px 0;
+    padding: 2px 5px;
+}
+
+.selectField {
+    margin: 5px 0;
+    padding: 2px 5px;
+}
+
+.fieldButtons {
+    display: flex;
+}
+
+.fieldButtons > button {
+    flex: 1;
+    margin: 5px;
+    cursor: pointer;
+
+    padding: 5px 0;
+    color: #ffffff;
+    background: #003e85;
+    border-top: 3px solid #1b3b61;
+    border-left: 3px solid #1b3b61;
+    border-bottom: 3px solid #2f5077;
+    border-right: 3px solid #2f5077;
+}
+
+.fieldButtons > button:active {
+    background: #17549b;
+    border-top: 3px solid #2f5077;
+    border-left: 3px solid #2f5077;
+    border-bottom: 3px solid #1b3b61;
+    border-right: 3px solid #1b3b61;
+}
+
+.fieldButtons > button.disabled {
+    opacity: 0.5;
+}
